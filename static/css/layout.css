@@ -1,0 +1,279 @@
+/* =========================
+   NAVIGATION
+========================= */
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-bottom: 1px solid var(--gray-200);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: min(100% - 40px, var(--container-width));
+
+    min-height: 80px;
+
+    margin-inline: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    font-family: var(--font-primary);
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    color: var(--secondary);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+
+/* =========================
+   DESKTOP NAV
+========================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 32px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: var(--gray-700);
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition: var(--transition);
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--primary);
+
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   MOBILE BUTTON
+========================= */
+
+.mobile-menu-btn {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--secondary);
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   MOBILE NAV
+========================= */
+
+.mobile-nav {
+    display: none;
+
+    padding: 20px;
+
+    border-top: 1px solid var(--gray-200);
+
+    background: var(--white);
+}
+
+.mobile-nav.active {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.mobile-nav a {
+    color: var(--gray-700);
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+    background: var(--secondary);
+
+    color: var(--white);
+}
+
+.footer-container {
+    padding-top: 70px;
+    padding-bottom: 60px;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 60px;
+}
+
+.footer-brand .logo {
+    color: var(--white);
+}
+
+.footer-brand p {
+    margin-top: 15px;
+
+    max-width: 280px;
+
+    color: var(--gray-300);
+}
+
+.footer-links,
+.footer-contact {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    margin-bottom: 8px;
+
+    font-family: var(--font-secondary);
+}
+
+.footer-links a,
+.footer-contact a {
+    color: var(--gray-300);
+
+    transition: var(--transition);
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: var(--primary-light);
+}
+
+.footer-contact i {
+    width: 20px;
+
+    margin-right: 5px;
+
+    color: var(--primary-light);
+}
+
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+    padding: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    text-align: center;
+
+    color: var(--gray-500);
+
+    font-size: 0.85rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 14px 24px;
+
+    border-radius: 50px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+    border: 1px solid var(--gray-300);
+    color: var(--secondary);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+

@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+
+{% block title %}
+Services | TechWell Solution
+{% endblock %}
+
+{% block content %}
+
+<!-- ===================================================== PAGE HERO ===================================================== -->
+
+<section class="page-hero">
+
+<div class="container">
+
+    <span class="section-label">
+        OUR SERVICES
+    </span>
+
+    <h1>
+        Technology & Digital
+        <span>Solutions For You.</span>
+    </h1>
+
+    <p>
+        From software development and technology solutions
+        to everyday digital services, TechWell provides
+        practical solutions designed around your needs.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ===================================================== SERVICES ===================================================== -->
+
+<section class="services-page-section">
+
+<div class="container">
+
+    <div class="section-heading centered">
+
+        <span class="section-label">
+            WHAT WE OFFER
+        </span>
+
+        <h2>
+            Solutions That
+            <span>Make a Difference.</span>
+        </h2>
+
+        <p>
+            Explore our range of technology, digital and
+            professional services.
+        </p>
+
+    </div>
+
+    <div class="services-page-grid">
+
+        {% for service in services %}
+
+        <article class="service-detail-card">
+
+            {% if service.image %}
+
+            <div class="service-detail-image">
+
+                <img
+                    src="{{ service.image.url }}"
+                    alt="{{ service.title }}"
+                >
+
+            </div>
+
+            {% else %}
+
+            <div class="service-detail-icon">
+
+                {% if service.icon %}
+
+                <i class="{{ service.icon }}"></i>
+
+                {% else %}
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                {% endif %}
+
+            </div>
+
+            {% endif %}
+
+
+            <span class="service-number">
+                {{ forloop.counter|stringformat:"02d" }}
+            </span>
+
+
+            <h3>
+                {{ service.title }}
+            </h3>
+
+
+            <p>
+                {{ service.description }}
+            </p>
+
+
+            <a href="{% url 'core:contact' %}" class="service-link">
+
+                Request a Service
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </article>
+
+        {% empty %}
+
+        <div class="empty-message">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            <h3>
+                No services available yet.
+            </h3>
+
+            <p>
+                Our services will be available soon.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== PLATFORMS ===================================================== -->
+
+<section class="service-platforms" id="platforms">
+
+<div class="container">
+
+    <div class="section-heading centered">
+
+        <span class="section-label">
+            OUR PLATFORMS
+        </span>
+
+        <h2>
+            Find the Right
+            <span>TechWell Platform.</span>
+        </h2>
+
+        <p>
+            Our specialized platforms make it easier to
+            access the service you need.
+        </p>
+
+    </div>
+
+
+    <div class="platform-mini-grid">
+
+        {% for platform in platforms %}
+
+        <div class="platform-mini-card">
+
+            <div class="platform-icon">
+
+                {% if platform.icon %}
+
+                <i class="{{ platform.icon }}"></i>
+
+                {% else %}
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                {% endif %}
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    {{ platform.name }}
+                </h3>
+
+                <p>
+                    {{ platform.short_description }}
+                </p>
+
+                {% if platform.url %}
+
+                <a
+                    href="{{ platform.url }}"
+                    class="platform-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Visit Platform
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== CTA ===================================================== -->
+
+<section class="cta-section" id="contact">
+
+<div class="container">
+
+    <div class="cta-content">
+
+        <span class="section-label">
+            NEED A SOLUTION?
+        </span>
+
+        <h2>
+            Let's Build
+            <span>Something Useful.</span>
+        </h2>
+
+        <p>
+            Tell us what you need and we'll help you find
+            the right TechWell solution.
+        </p>
+
+        <a href="{% url 'core:contact' %}" class="btn btn-primary">
+            Contact TechWell
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+{% endblock %}

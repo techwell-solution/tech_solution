@@ -1,0 +1,306 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact TechWell Solution
+{% endblock %}
+
+{% block content %}
+
+<!-- ===================================================== CONTACT HERO ===================================================== -->
+
+<section class="page-hero contact-hero">
+
+<div class="container">
+
+    <span class="section-label">
+        GET IN TOUCH
+    </span>
+
+    <h1>
+        Let's Talk About
+        <span>Your Solution.</span>
+    </h1>
+
+    <p>
+        Have a question, need a service, or have a technology
+        project in mind? Send us a message and we'll get back
+        to you.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ===================================================== CONTACT ===================================================== -->
+
+<section class="contact-section">
+
+<div class="container contact-grid">
+
+    <!-- CONTACT INFORMATION -->
+
+    <div class="contact-info">
+
+        <span class="section-label">
+            CONTACT TECHWELL
+        </span>
+
+        <h2>
+            How Can We
+            <span>Help?</span>
+        </h2>
+
+        <p>
+            Whether you are looking for a digital service,
+            software solution or professional support,
+            we'd love to hear from you.
+        </p>
+
+
+        <div class="contact-details">
+
+            <div class="contact-detail">
+
+                <div class="contact-detail-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Email
+                    </span>
+
+                    <a href="mailto:info@techwellsolution.com">
+                        info@techwellsolution.com
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <div class="contact-detail-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Phone
+                    </span>
+
+                    <a href="tel:+254000000000">
+                        +254 000 000 000
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <div class="contact-detail-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Location
+                    </span>
+
+                    <p>
+                        Nairobi, Kenya
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTACT FORM -->
+
+    <div class="contact-form-wrapper">
+
+        <form
+            method="POST"
+            class="contact-form"
+        >
+
+            {% csrf_token %}
+
+
+            {% if form.non_field_errors %}
+
+            <div class="form-errors">
+
+                {{ form.non_field_errors }}
+
+            </div>
+
+            {% endif %}
+
+
+            <div class="form-group">
+
+                <label for="{{ form.name.id_for_label }}">
+                    Name
+                </label>
+
+                {{ form.name }}
+
+                {% for error in form.name.errors %}
+
+                <small class="field-error">
+                    {{ error }}
+                </small>
+
+                {% endfor %}
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="{{ form.email.id_for_label }}">
+                        Email
+                    </label>
+
+                    {{ form.email }}
+
+                    {% for error in form.email.errors %}
+
+                    <small class="field-error">
+                        {{ error }}
+                    </small>
+
+                    {% endfor %}
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="{{ form.phone.id_for_label }}">
+                        Phone
+                    </label>
+
+                    {{ form.phone }}
+
+                    {% for error in form.phone.errors %}
+
+                    <small class="field-error">
+                        {{ error }}
+                    </small>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="{{ form.subject.id_for_label }}">
+                    Subject
+                </label>
+
+                {{ form.subject }}
+
+                {% for error in form.subject.errors %}
+
+                <small class="field-error">
+                    {{ error }}
+                </small>
+
+                {% endfor %}
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="{{ form.message.id_for_label }}">
+                    Message
+                </label>
+
+                {{ form.message }}
+
+                {% for error in form.message.errors %}
+
+                <small class="field-error">
+                    {{ error }}
+                </small>
+
+                {% endfor %}
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary contact-submit"
+            >
+
+                Send Message
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== CTA ===================================================== -->
+
+<section class="cta-section">
+
+<div class="container">
+
+    <div class="cta-content">
+
+        <span class="section-label">
+            TECHWELL SOLUTION
+        </span>
+
+        <h2>
+            Technology That
+            <span>Works For You.</span>
+        </h2>
+
+        <p>
+            Explore our services and discover how TechWell
+            can help you move forward.
+        </p>
+
+        <a
+            href="{% url 'core:services' %}"
+            class="btn btn-primary"
+        >
+            Explore Services
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+{% endblock %}

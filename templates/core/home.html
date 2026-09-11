@@ -1,0 +1,784 @@
+{% extends "base.html" %}
+
+{% block title %}
+TechWell Solution | Technology, Digital & Business Solutions
+{% endblock %}
+
+{% block content %}
+
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
+<section class="hero">
+
+```
+<div class="container hero-container">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            TECHWELL SOLUTION
+        </span>
+
+        <h1>
+            Technology
+            <span>That Works For You.</span>
+        </h1>
+
+        <p>
+            We bring technology, digital services, software
+            development and professional solutions together
+            under one trusted platform.
+        </p>
+
+        <div class="hero-actions">
+
+            <a href="#platforms" class="btn btn-primary">
+                Explore Our Solutions
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="{% url 'core:contact' %}" class="btn btn-outline">
+                Get In Touch
+            </a>
+
+        </div>
+
+        <div class="hero-trust">
+
+            <div class="trust-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Practical Solutions</span>
+            </div>
+
+            <div class="trust-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>People Focused</span>
+            </div>
+
+            <div class="trust-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Technology Driven</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+
+        <div class="hero-card main-card">
+
+            <div class="hero-card-icon">
+
+                <i class="fa-solid fa-microchip"></i>
+
+            </div>
+
+            <span class="hero-card-label">
+                ONE PLATFORM
+            </span>
+
+            <h3>
+                Multiple Solutions
+            </h3>
+
+            <p>
+                Connecting people and businesses to
+                technology and professional services.
+            </p>
+
+        </div>
+
+
+        <div class="floating-card floating-card-one">
+
+            <i class="fa-solid fa-code"></i>
+
+            <div>
+                <strong>Software</strong>
+                <small>Development</small>
+            </div>
+
+        </div>
+
+
+        <div class="floating-card floating-card-two">
+
+            <i class="fa-solid fa-computer"></i>
+
+            <div>
+                <strong>Digital</strong>
+                <small>Services</small>
+            </div>
+
+        </div>
+
+
+        <div class="floating-card floating-card-three">
+
+            <i class="fa-solid fa-heart"></i>
+
+            <div>
+                <strong>Wellness</strong>
+                <small>Support</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<section class="intro-section" id="about">
+
+<div class="container">
+
+    <div class="intro-grid">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                ABOUT TECHWELL
+            </span>
+
+            <h2>
+                One Platform.
+                <span>Many Possibilities.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="intro-content">
+
+            <p>
+                TechWell Solution is a technology and
+                professional services platform designed to
+                make technology more accessible, practical
+                and useful.
+            </p>
+
+            <p>
+                Through our specialized platforms, we serve
+                individuals, families, students, entrepreneurs
+                and businesses with solutions ranging from
+                digital services and counselling to software
+                development and technology consulting.
+            </p>
+
+            <a href="{% url 'core:services' %}#platforms" class="text-link">
+                Discover TechWell
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     PLATFORMS
+===================================================== -->
+
+<section class="platforms-section" id="platforms">
+
+```
+<div class="container">
+
+    <div class="section-heading centered">
+
+        <span class="section-label">
+            OUR PLATFORMS
+        </span>
+
+        <h2>
+            One TechWell.
+            <span>Three Specialized Platforms.</span>
+        </h2>
+
+        <p>
+            Each platform focuses on a specific need while
+            remaining part of the wider TechWell ecosystem.
+        </p>
+
+    </div>
+
+
+    <div class="platform-grid">
+
+        {% for platform in platforms %}
+
+        <article class="platform-card">
+
+            {% if platform.image %}
+
+            <div class="platform-image">
+
+                <img
+                    src="{{ platform.image.url }}"
+                    alt="{{ platform.name }}"
+                >
+
+            </div>
+
+            {% else %}
+
+            <div class="platform-icon">
+
+                <i class="{{ platform.icon }}"></i>
+
+            </div>
+
+            {% endif %}
+
+
+            <div class="platform-content">
+
+                <span class="platform-number">
+                    0{{ forloop.counter }}
+                </span>
+
+                <h3>
+                    {{ platform.name }}
+                </h3>
+
+                <p class="platform-short-description">
+                    {{ platform.short_description }}
+                </p>
+
+                <p>
+                    {{ platform.description }}
+                </p>
+
+
+                {% if platform.url %}
+
+                <a
+                    href="{{ platform.url }}"
+                    class="platform-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Explore Platform
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                {% else %}
+
+                <a href="#contact" class="platform-link">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+        <div class="empty-message">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            <h3>
+                Our platforms are coming soon.
+            </h3>
+
+            <p>
+                We're preparing our services for you.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="services-section" id="services">
+
+```
+<div class="container">
+
+    <div class="section-heading centered">
+
+        <span class="section-label">
+            WHAT WE DO
+        </span>
+
+        <h2>
+            Solutions Designed
+            <span>For Real Needs.</span>
+        </h2>
+
+        <p>
+            From everyday digital assistance to custom
+            technology solutions, we help turn challenges
+            into practical results.
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+    {% for service in services %}
+
+    <article class="service-card">
+
+        <div class="service-icon">
+
+            {% if service.icon %}
+
+            <i class="{{ service.icon }}"></i>
+
+            {% else %}
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            {% endif %}
+
+        </div>
+
+        <span class="service-number">
+            {{ forloop.counter|stringformat:"02d" }}
+        </span>
+
+        <h3>
+            {{ service.title }}
+        </h3>
+
+        <p>
+            {{ service.short_description }}
+        </p>
+
+        <a
+            href="{% url 'core:services' %}"
+            class="service-link"
+        >
+            Learn More
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </article>
+
+    {% empty %}
+
+    <div class="empty-message">
+
+        <i class="fa-solid fa-layer-group"></i>
+
+        <h3>
+            Services coming soon.
+        </h3>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</div>
+
+
+</section>
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats-section">
+
+```
+<div class="container">
+
+    <div class="stats-grid">
+
+        <div class="stat-item">
+
+            <strong>
+                3
+            </strong>
+
+            <span>
+                Specialized Platforms
+            </span>
+
+        </div>
+
+
+        <div class="stat-item">
+
+            <strong>
+                1
+            </strong>
+
+            <span>
+                Unified Ecosystem
+            </span>
+
+        </div>
+
+
+        <div class="stat-item">
+
+            <strong>
+                100%
+            </strong>
+
+            <span>
+                Technology Focused
+            </span>
+
+        </div>
+
+
+        <div class="stat-item">
+
+            <strong>
+                ∞
+            </strong>
+
+            <span>
+                Possibilities
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     WHY TECHWELL
+===================================================== -->
+
+<section class="why-section">
+
+<div class="container why-container">
+
+    <div class="why-content">
+
+        <span class="section-label">
+            WHY TECHWELL
+        </span>
+
+        <h2>
+            Technology With
+            <span>Purpose.</span>
+        </h2>
+
+        <p>
+            Technology should not make life more complicated.
+            It should make things simpler, faster and better.
+        </p>
+
+        <p>
+            That's why TechWell combines technology with
+            practical services designed around real people,
+            businesses and everyday challenges.
+        </p>
+
+        <a href="{% url 'core:contact' %}" class="btn btn-primary">
+            Work With Us
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="why-features">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+
+            <div>
+
+                <h3>
+                    Practical
+                </h3>
+
+                <p>
+                    We focus on solutions that solve real
+                    problems and deliver useful results.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div>
+
+                <h3>
+                    People Focused
+                </h3>
+
+                <p>
+                    Our technology is designed around the
+                    people and businesses who use it.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+
+                <h3>
+                    Reliable
+                </h3>
+
+                <p>
+                    We aim to provide dependable services
+                    and technology you can trust.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-rocket"></i>
+            </div>
+
+            <div>
+
+                <h3>
+                    Forward Thinking
+                </h3>
+
+                <p>
+                    We continuously explore better ways
+                    to use technology.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
+
+<section class="process-section">
+
+```
+<div class="container">
+
+    <div class="section-heading centered">
+
+        <span class="section-label">
+            HOW WE WORK
+        </span>
+
+        <h2>
+            Simple.
+            <span>Focused. Effective.</span>
+        </h2>
+
+        <p>
+            Getting the right solution shouldn't be
+            complicated.
+        </p>
+
+    </div>
+
+
+    <div class="process-grid">
+
+        <div class="process-item">
+
+            <span class="process-number">
+                01
+            </span>
+
+            <div class="process-icon">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+
+            <h3>
+                Understand
+            </h3>
+
+            <p>
+                We listen to your needs and understand
+                the problem you're trying to solve.
+            </p>
+
+        </div>
+
+
+        <div class="process-item">
+
+            <span class="process-number">
+                02
+            </span>
+
+            <div class="process-icon">
+                <i class="fa-solid fa-compass"></i>
+            </div>
+
+            <h3>
+                Plan
+            </h3>
+
+            <p>
+                We identify the most appropriate service
+                or technology solution.
+            </p>
+
+        </div>
+
+
+        <div class="process-item">
+
+            <span class="process-number">
+                03
+            </span>
+
+            <div class="process-icon">
+                <i class="fa-solid fa-gears"></i>
+            </div>
+
+            <h3>
+                Deliver
+            </h3>
+
+            <p>
+                We put the solution into action with
+                attention to quality and usability.
+            </p>
+
+        </div>
+
+
+        <div class="process-item">
+
+            <span class="process-number">
+                04
+            </span>
+
+            <div class="process-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <h3>
+                Grow
+            </h3>
+
+            <p>
+                We help you continue improving as your
+                needs and technology evolve.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta-section" id="contact">
+
+<div class="container">
+
+    <div class="cta-content">
+
+        <span class="section-label">
+            LET'S WORK TOGETHER
+        </span>
+
+        <h2>
+            Have a Challenge?
+            <span>Let's Solve It.</span>
+        </h2>
+
+        <p>
+            Whether you need a digital service, software
+            solution or professional support, TechWell
+            is here to help.
+        </p>
+
+        <div class="cta-actions">
+
+            <a href="{% url 'core:contact' %}" class="btn btn-primary">
+                Contact TechWell
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#platforms" class="btn btn-outline">
+                Explore Solutions
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+{% endblock %}
