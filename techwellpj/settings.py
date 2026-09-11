@@ -30,6 +30,9 @@ ALLOWED_HOSTS = os.environ.get(
     "127.0.0.1,localhost"
 ).split(",")
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://tech-solution-6zno.onrender.com",
+]
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
