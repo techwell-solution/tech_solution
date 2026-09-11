@@ -291,90 +291,113 @@
 }
 
 
-/* =========================
-   PLATFORMS
-========================= */
-
 .platforms-section {
-    padding: 120px 0;
-
-    background: var(--gray-50);
+padding: 120px 0;
+background: var(--gray-50);
 }
 
 .platform-grid {
-    margin-top: 60px;
+margin-top: 60px;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 30px;
+
 }
 
 .platform-card {
-    overflow: hidden;
+padding: 35px 30px;
+background: #ffffff;
+
+border: 1px solid rgba(15, 118, 110, 0.08);
+border-radius: 20px;
+
+transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
 }
 
-.platform-image {
-    height: 220px;
-    overflow: hidden;
-}
+.platform-card {
+transform: translateY(-6px);
 
-.platform-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.08);
+
 }
 
 .platform-icon {
-    width: 80px;
-    height: 80px;
+width: 70px;
+height: 70px;
 
-    margin: 30px;
+margin-bottom: 25px;
 
-    border-radius: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
 
-    background: rgba(15, 118, 110, 0.1);
+border-radius: 18px;
 
-    color: var(--primary);
+background: rgba(15, 118, 110, 0.1);
 
-    font-size: 2rem;
+color: var(--primary);
+
+font-size: 1.8rem;
+
 }
 
-.platform-content {
-    padding: 0 30px 35px;
+.platform-number {
+display: block;
+
+margin-bottom: 10px;
+
+font-size: 0.85rem;
+font-weight: 700;
+
+color: var(--primary);
+
+letter-spacing: 1px;
+
 }
 
 .platform-content h3 {
-    margin-bottom: 12px;
+margin-bottom: 12px;
 }
 
 .platform-content p {
-    color: var(--gray-600);
+color: var(--gray-600);
 }
 
 .platform-short-description {
-    margin-bottom: 12px;
+margin-bottom: 12px;
 
-    font-weight: 600;
+font-weight: 600;
 
-    color: var(--secondary) !important;
+color: var(--secondary) !important;
+
 }
 
 .platform-link {
-    display: inline-flex;
+display: inline-flex;
 
-    align-items: center;
-    gap: 8px;
+align-items: center;
+gap: 8px;
 
-    margin-top: 25px;
+margin-top: 25px;
 
-    color: var(--primary);
+color: var(--primary);
 
-    font-weight: 600;
+font-weight: 600;
+
+transition: gap 0.3s ease;
+
 }
 
-.platform-link:hover {
-    gap: 13px;
+.platform-link {
+gap: 13px;
 }
+
+
 
 
 /* =========================
