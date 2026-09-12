@@ -39,21 +39,58 @@
 /* =========================
    LOGO
 ========================= */
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
-.logo {
+    text-decoration: none;
+}
+.logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+    color: #ffffff;
+
     font-family: var(--font-primary);
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
 
-    font-size: 2rem;
+.logo-text {
+    display: flex;
+    flex-direction: column;
 
+    line-height: 1;
+}
+
+.logo-text strong {
+    font-family: var(--font-primary);
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo-text small {
+    margin-top: 4px;
+
+    font-family: var(--font-primary);
+    font-size: 0.62rem;
     font-weight: 700;
 
-    color: var(--secondary);
-}
+    letter-spacing: 3px;
+    text-transform: uppercase;
 
-.logo span {
     color: var(--primary);
 }
-
 
 /* =========================
    DESKTOP NAV
