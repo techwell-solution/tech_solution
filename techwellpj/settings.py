@@ -28,7 +28,7 @@ ALLOWED_HOSTS = [
     ).split(",")
     if host.strip()
 ]
-
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 # ============================================================
 # APPLICATIONS
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # Custom apps
     "core",
+    "chatbot",
 ]
 
 

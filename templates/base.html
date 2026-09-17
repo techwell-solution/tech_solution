@@ -127,7 +127,157 @@
 
     </main>
 
+     <!-- =========================================
+        TECHWELL CHATBOT
+        ========================================= -->
 
+    <button
+        id="chatbotButton"
+        class="chatbot-button"
+        aria-label="Open TechWell Assistant">
+        💬
+    </button>
+
+
+    <div
+        id="chatbotWindow"
+        class="chatbot-window"
+        aria-label="TechWell Assistant">
+
+        <!-- Header -->
+        <div class="chatbot-header">
+
+            <div class="chatbot-title">
+
+                <div class="chatbot-title-icon">
+                    TW
+                </div>
+
+                <div>
+                    <h3>TechWell Assistant</h3>
+                    <span>How can we help you?</span>
+                </div>
+
+            </div>
+
+            <button
+                id="chatbotClose"
+                class="chatbot-close"
+                aria-label="Close chatbot">
+                &times;
+            </button>
+
+        </div>
+
+
+        <!-- Messages -->
+        <div
+            id="chatbotMessages"
+            class="chatbot-messages">
+
+            <div class="chatbot-message bot">
+
+                <div class="chatbot-bubble">
+                    Hi! 👋 Welcome to TechWell Solution.
+                    How can I help you today?
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Quick Actions -->
+        <div class="chatbot-quick-actions">
+
+            <button
+                type="button"
+                class="chatbot-quick-btn"
+                data-message="What services do you offer?">
+                Our Services
+            </button>
+
+            <button
+                type="button"
+                class="chatbot-quick-btn"
+                data-message="I need a website">
+                Website / Software
+            </button>
+
+            <button
+                type="button"
+                class="chatbot-quick-btn"
+                data-message="I need help with my business">
+                Business Solutions
+            </button>
+
+            <button
+                type="button"
+                class="chatbot-quick-btn"
+                data-message="I need a digital service">
+                Digital Services
+            </button>
+
+            <button
+                type="button"
+                class="chatbot-quick-btn"
+                data-message="I need help with a government online service">
+                Government Services
+            </button>
+
+            <button
+                type="button"
+                class="chatbot-quick-btn"
+                data-message="I need counselling">
+                Wellness & Counselling
+            </button>
+
+            <button
+                type="button"
+                class="chatbot-quick-btn"
+                data-message="I would like to request a quotation">
+                Get a Quote
+            </button>
+
+        </div>
+
+
+        <!-- Typing -->
+        <div
+            id="chatbotTyping"
+            class="chatbot-typing">
+            TechWell Assistant is typing...
+        </div>
+
+
+        <!-- Input -->
+        <div class="chatbot-input-area">
+
+            <form
+                id="chatbotForm"
+                class="chatbot-form">
+
+                {% csrf_token %}
+
+                <input
+                    type="text"
+                    id="chatbotInput"
+                    class="chatbot-input"
+                    placeholder="Type your message..."
+                    autocomplete="off">
+
+                <button
+                    type="submit"
+                    class="chatbot-send"
+                    aria-label="Send message">
+                    ➤
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
     <!-- =========================
          FOOTER
     ========================== -->
@@ -212,11 +362,13 @@
         </div>
 
     </footer>
+   
 
 
     <!-- JavaScript -->
 
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/chatbot.js' %}"></script>
 
     {% block extra_js %}
     {% endblock %}
